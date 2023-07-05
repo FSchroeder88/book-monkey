@@ -1,0 +1,18 @@
+<!-- ngIf wird genutzt damit es nur ausgespielt wird wenn es ein Buch gibt. Zudem benötigen
+wir es um an die Variablen des book zu gelangen die er ansonsten nicht kenn würde -->
+
+<div *ngIf="book" class="list-item">
+
+    <img *ngIf="book.thumbnailUrl" [src]="book.thumbnailUrl" alt="Cover">
+    <h2>{{ book.title }}</h2>
+    <p role="doc-subtitle" *ngIf="book.subtitle">
+        {{ book.subtitle }}
+    </p>
+    <ul class="comma-list">
+        <li *ngFor="let author of book.authors">
+            {{ author }}
+        </li>
+    </ul>
+    <div>ISBN {{ book.isbn }}</div>
+
+</div>

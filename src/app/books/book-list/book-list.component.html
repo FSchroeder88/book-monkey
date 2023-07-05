@@ -1,0 +1,13 @@
+<h1>Books</h1>
+<ul class="book-list">
+    <li *ngFor="let book of books">
+        <!-- Hier wird nun die component book-list-item eingebunden, um die einzelnen Bücher auszuspielen. Zusätzlich
+        haben wir ein click event. DAmit können wir die detail componente von einem Buch aufrufen. -->
+        <app-book-list-item [book]="book" (click)="doSelect(book)">
+
+        </app-book-list-item>
+    </li>
+    <li *ngIf="!books.length">
+        No books available.
+    </li>
+</ul>
