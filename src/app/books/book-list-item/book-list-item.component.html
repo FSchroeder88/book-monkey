@@ -1,7 +1,7 @@
 <!-- ngIf wird genutzt damit es nur ausgespielt wird wenn es ein Buch gibt. Zudem benötigen
 wir es um an die Variablen des book zu gelangen die er ansonsten nicht kenn würde -->
 
-<div *ngIf="book" class="list-item">
+<a *ngIf="book" [routerLink]="book.isbn" class="list-item">
 
     <img *ngIf="book.thumbnailUrl" [src]="book.thumbnailUrl" alt="Cover">
     <h2>{{ book.title }}</h2>
@@ -15,4 +15,4 @@ wir es um an die Variablen des book zu gelangen die er ansonsten nicht kenn wür
     </ul>
     <div>ISBN {{ book.isbn }}</div>
 
-</div>
+</a>

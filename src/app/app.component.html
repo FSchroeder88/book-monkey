@@ -1,6 +1,9 @@
-<router-outlet>
-    <main>
-        <app-book-list *ngIf="!book" (selectBook)="showDetails($event)"></app-book-list>
-        <app-book-details *ngIf="book" (leave)="showList()" [book]="book"></app-book-details>
-    </main>
-</router-outlet>
+<nav>
+    <!-- Links innerhalb einer Angularanwendung mit routerlink ausführen und nicht mit href. Mit href wird die seite neu geladen und das ist nicht notwendig -->
+    <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+    <a routerLink="/books" routerLinkActive="active" ariaCurrentWhenActive="page">Books</a>
+</nav>
+
+<main>
+    <router-outlet></router-outlet>
+</main>
